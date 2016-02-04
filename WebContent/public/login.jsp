@@ -1,6 +1,18 @@
-
-	<jsp:include page="/public/header.jsp" />
-
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Tp file rouge Médiathèque </title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../public/lib/bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/lib/font-awesome/css/font-awesome.css"/>
+		<!-- <link rel="stylesheet" type="text/css" href="public/css/style.css"/>  -->
+		<script type="text/javascript" src="../public/lib/jquery.js"></script>		
+		<script type="text/javascript" src="../public/lib/bootstrap/js/bootstrap.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.css">
+		<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+	</head>
+	
+	<body class="main-page container-fluid adherent">
 	<form method="post" action="LoginServlet">
 		<div style="padding: 100px 0 0 250px;">
 
@@ -27,8 +39,6 @@
 
 		</div>
 
-	</form>
-	
 	
 	<jsp:include page="/public/footer.jsp" />
 

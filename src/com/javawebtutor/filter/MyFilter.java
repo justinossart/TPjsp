@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.javawebtutor.model.User;
+import com.javawebtutor.bean.UserBean;
 
 public class MyFilter implements Filter {
 
 	public void init(FilterConfig filterConfig) {
 
 	}
-
+	
 	public void destroy() {
-
+		
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -29,9 +29,9 @@ public class MyFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse rep = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
-		User user = (User) session.getAttribute("user");
+		UserBean userBean = (UserBean) session.getAttribute("userBean");
 
-		if (user != null || req.getRequestURI().indexOf("public/") >= 0) {
+		if (userBean != null || req.getRequestURI().indexOf("public/") >= 0) {
 			chain.doFilter(request, response);
 			return;
 		}

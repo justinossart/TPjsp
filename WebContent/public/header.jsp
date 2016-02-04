@@ -3,10 +3,10 @@
 
 
 <!DOCTYPE html>
-<%@page import="com.javawebtutor.model.User"%>
+<%@page import="com.javawebtutor.bean.UserBean"%>
 <html lang="fr">
 	<head>
-		<title>Tp file rouge MÃ©diathÃ¨que </title>
+		<title>Tp file rouge Médiathèque </title>
 		<meta charset="UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="../public/lib/bootstrap/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../public/lib/font-awesome/css/font-awesome.css"/>
@@ -33,10 +33,15 @@
 			<h1>HEADER</h1>
 
 					
-			<% User u = (User) session.getAttribute("user"); %>
-			<%=u==null ? "Non connecté": u.getUserId() %>
+			<jsp:useBean id="userBean" beanName="userBean" scope="session" 
+			type="com.javawebtutor.bean.UserBean"/>
+					
+			<% UserBean u = (UserBean) session.getAttribute("userBean"); %>
+			<%=u==null ? "Non connecté": u.getUserConnected().getUserId() %>
 			
-
+			
+			<%= userBean.getDateConnection() %>
+			
 
 			<div id="logo" class="col-sm-2 hidden-xs"></div>
 			<nav class="col-xs-12 col-sm-10">
